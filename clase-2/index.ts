@@ -1,7 +1,7 @@
 class User {
     name: string;
     lastname: string;
-    book: any;
+    book: {author: string, book: string}[];
     pet: string[]
 
     constructor(name: string, lastname: string, book:[], pet:[]) {
@@ -28,7 +28,7 @@ class User {
     }
 }
 
-const books = [
+const books: any = [
     {
         author: "John Katzenback",
         book: "The Psicoanalist"
@@ -39,7 +39,7 @@ const books = [
     }
 ]
 
-const pets = ['Farru the dog', 'Misu the cat']
+const pets: any = ['Farru the dog', 'Misu the cat']
 
 const user = new User('Ruben', 'Mavarez', books, pets)
 
