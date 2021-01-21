@@ -2,7 +2,7 @@ const http = require('http');
 
 const info = () => {
     return {
-        id: Math.floor(Math.random() * 10) !== 0,
+        id: Math.floor(Math.random() * 10),
         producto: `Producto ${Math.floor(Math.random() * 10)}`,
         price: `${(Math.random() * 9999.99).toFixed(2)}$`,
         foto: `Foto ${Math.floor(Math.random() * 10)}`
