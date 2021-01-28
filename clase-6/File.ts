@@ -11,7 +11,7 @@ class File {
 
     read(){
         try {
-            const readFile = fs.readFileSync(`./clase-6/${this.filename}`, 'utf-8');
+            const readFile = fs.readFileSync(`./clase-7/${this.filename}`, 'utf-8');
             return readFile ? readFile : '[]'; 
         } catch (error) {
             console.log(error)
@@ -20,7 +20,7 @@ class File {
 
     writeAndSave(arr: Product){
         try {
-            fs.writeFileSync(`./clase-6/${this.filename}`, JSON.stringify([arr]));
+            fs.writeFileSync(`./clase-7/${this.filename}`, JSON.stringify([arr]));
         } catch (error) {
             console.log('El archivo no se pudo crear', error)
         } 
@@ -34,14 +34,14 @@ class File {
                 ...arrParse,
                 product
             ]
-            fs.writeFileSync(`./clase-6/${this.filename}`, JSON.stringify(arrParse));
+            fs.writeFileSync(`./clase-7/${this.filename}`, JSON.stringify(arrParse));
         } catch (error) {
             console.log('El archivo no existe!', error)
         } 
     }
-    async delete(){
+    delete(){
         try {
-            await fs.promises.unlink(`./clase-6/${this.filename}`);
+            fs.unlinkSync(`./clase-6/${this.filename}`);
             console.log('Archivo eliminado!!')
         } catch (error) {
             console.log('El archivo no existe!', error)
