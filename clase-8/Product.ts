@@ -1,25 +1,25 @@
-interface Product {
-    id: string;
-    title: string;
-    price: number;
-    thumbnail: string;
-}
+// interface Product {
+//     id: string;
+//     title: string;
+//     price: number;
+//     thumbnail: string;
+// }
 
-class Products {
-    constructor(public products: Product[]){}
+// class Products {
+//     constructor(public products: Product[]){}
 
-    addProduct(prod: Product) {
-        this.products.push(prod);
-    }
+//     addProduct(prod: Product) {
+//         this.products.push(prod);
+//     }
 
-    getProducts() {
-        return this.products;
-    }
+//     getProducts() {
+//         return this.products;
+//     }
 
-    findOneProduct(id: string){
-        const findProduct = this.products.find(prod => prod.id === id);
-        return findProduct;
-    }
-}
+//     findOneProduct(id: string){
+//         const findProduct = this.products.find(prod => prod.id === id);
+//         return findProduct;
+//     }
+// }
 
-export default Products
+// export default Products
