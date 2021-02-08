@@ -20,9 +20,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:build": "tsc -w",
-    "start:run": "nodemon clase-8/index.js",
+    "start:run": "nodemon clase-9/index.js",
     "start": "concurrently npm:start:*",
-    "dev": "nodemon ./clase-8/index.js"
+    "dev": "nodemon ./clase-9/index.js"
   },
   "repository": {
     "type": "git",
