@@ -1,14 +1,14 @@
-import express from 'express';
+// import express from 'express';
 
-const router = express.Router();
+// const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hola!')
-})
+// router.get('/', (req, res) => {
+//     res.send('Hola!')
+// })
 
-router.post('/', (req, res) => {
-    res.send('Hola! estoy posteando')
-})
+// router.post('/', (req, res) => {
+//     res.send('Hola! estoy posteando')
+// })
 
-export default router;
+// export default router;
 
