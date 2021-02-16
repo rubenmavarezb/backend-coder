@@ -1,0 +1,26 @@
+<h2>List of products</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Id</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {{#if listExists}}
+        {{#each products}}
+            <tr>
+            <th scope="row">1</th>
+            <td>{{this.nombre}}</td>
+            <td>{{this.precio}}</td>
+            <td>{{this.id}}</td>
+            </tr>
+        {{/each}}
+    {{/if}}
+
+</tbody>
+</table>
