@@ -14,13 +14,13 @@
     {{#if listExists}}
         {{#each products}}
             <tr>
-            <th scope="row">1</th>
-            <td>{{this.nombre}}</td>
+            <th scope="row">{{}}</th>
+            <td>{{this.producto}}</td>
             <td>{{this.precio}}</td>
             <td>{{this.id}}</td>
             </tr>
         {{/each}}
     {{/if}}
-
+    <a href="http://localhost:8080/add">Agregar productos</a>
 </tbody>
 </table>
