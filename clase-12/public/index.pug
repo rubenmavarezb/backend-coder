@@ -45,12 +45,11 @@ body
 
         inputs.forEach(input => {
           input.addEventListener('input', e => {
-            inputValues = {...inputValues, [e.target.name]: e.target.value}
+            inputValues = {...inputValues, [e.target.name]: e.target.value};
           })
         })
 
         document.querySelector('#form').addEventListener('submit', e => {
-          e.preventDefault();
 
           const { producto, precio, thumbnail } = inputValues;
           

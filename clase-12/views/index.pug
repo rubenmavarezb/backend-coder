@@ -14,11 +14,37 @@ body
             th(scope='col') Nombre
             th(scope='col') Precio
             th(scope='col') Id
-        tbody
-            each prod in products
-                tr
-                th(scope='row')= prod.id
-                td= prod.producto
-                td= prod.precio
-                td= prod.id
+        tbody#tbody
+            //- each prod in products
+            //-     tr
+            //-     th(scope='row')= prod.id
+            //-     td= prod.producto
+            //-     td= prod.precio
+            //-     td= prod.id
     a(href=dir) Agregar productos
+    script(src="/socket.io/socket.io.js")
+    script.
+        const socket = io();
+
+        function render(prods) {
+            let tBody = document.querySelector('#tbody');
+            tBody.innerHTML = '';
+            let table = ''
+
+            prods.forEach((product, i) => {
+                table += `
+                    <tr>
+                        <th scope='row'>${i + 1}</th>
+                        <td>${product.producto}</td>
+                        <td>${product.precio}</td>
+                        <td>${product.id}</td>
+                    </tr>
+                `;
+            })
+            
+            tBody.innerHTML = table;
+        }
+        socket.on('products', ({products}) => {
+            console.log(products);
+            render(products);
+        })  

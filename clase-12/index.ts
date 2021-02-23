@@ -40,17 +40,20 @@ const products: Product[] = [
 app.set("view engine", ".pug");
 app.set("views", __dirname + "/views");
 
-app.get('/', (req, res) => {
-    res.render('index.pug', {products: products, dir:'http://localhost:8080/add'})
-})
 
 app.get('/add', (req, res) => {
     res.render(__dirname + '/public/index.pug')
 });
 
+app.get('/', (req, res) => {
+    res.render('index.pug', {products: products, dir:'http://localhost:8080/add'})
+})
+
 io.on('connection', (socket: any) => {
-    console.log(socket.id)
-    socket.broadcast.emit('message', 'Server broo')
+    console.log(socket.id);
+    
+    socket.broadcast.emit('products', {products});
+
     socket.on('product', (message:any) => {
         const { producto, precio, thumbnail } = message;
 
@@ -62,8 +65,10 @@ io.on('connection', (socket: any) => {
         }
         
         products.push(newProduct);
-    })
+    })  
 })
+
+
 
 
 http.listen( 8080, () => {
