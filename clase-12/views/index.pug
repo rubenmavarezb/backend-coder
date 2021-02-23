@@ -15,12 +15,12 @@ body
             th(scope='col') Precio
             th(scope='col') Id
         tbody#tbody
-            //- each prod in products
-            //-     tr
-            //-     th(scope='row')= prod.id
-            //-     td= prod.producto
-            //-     td= prod.precio
-            //-     td= prod.id
+            each prod, i in products
+                tr
+                    th(scope='row')= i + 1
+                    td= prod.producto
+                    td= prod.precio
+                    td= prod.id
     a(href=dir) Agregar productos
     script(src="/socket.io/socket.io.js")
     script.

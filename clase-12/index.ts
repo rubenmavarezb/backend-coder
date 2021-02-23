@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket: any) => {
     console.log(socket.id);
-    
+
     socket.broadcast.emit('products', {products});
 
     socket.on('product', (message:any) => {
